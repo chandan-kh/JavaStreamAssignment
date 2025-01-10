@@ -40,6 +40,16 @@ public class Streams {
 
         System.out.println(average);
 
+        // Find the all non-repeating character in string using streams
+        String input = "programming";
+
+        List<Character> nonRepeatingChars = input.chars()
+                .mapToObj(c -> (char) c)
+                .filter(c -> input.indexOf(c) == input.lastIndexOf(c))
+                .collect(Collectors.toList());
+
+        System.out.println("Non-repeating characters: " + nonRepeatingChars);
+
         // Find the Kth largest number in list using streams concept.
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of k : ");
